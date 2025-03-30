@@ -1,4 +1,5 @@
-recursive-include geoclip/model/gps_gallery *.csv
-recursive-include geoclip/model/weights *.pth
-recursive-include geoclip/images *.png
+recursive-include geomapclip/model/gps_gallery *.csv
+recursive-include geomapclip/model/weights *.pth
+recursive-include geomapclip/images *.png
 recursive-include figures *.png
+
