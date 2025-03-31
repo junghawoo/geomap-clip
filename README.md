@@ -1,7 +1,7 @@
 <div align="center">    
  
 # 🌎 GeoMapCLIP: Worldwide Map Image Geo-localization
-GeoMapCLIP is fine-tuned GeoCLIP. 
+GeoMapCLIP is a fine-tuned GeoCLIP. 
 
 ![ALT TEXT](/figures/GeoMapCLIP.png)
 
@@ -21,7 +21,7 @@ Initial development will focus on fine-tuning GeoCLIP (Contrastive Language-Imag
 Similarly to OpenAI's CLIP, GeoMapCLIP is trained contrastively by matching Image-GPS pairs. 
 GeoMapCLIP learns distinctive visual features associated with different locations on earth.
 
-_🚧 Repo Under Construction 🔨_
+Repo is at https://github.com/junghawoo/geomap-clip/
 
 ## 📎 Getting Started: API
 
@@ -39,7 +39,7 @@ cd geomap-clip
 python setup.py install
 ```
 
-## 🗺️📍 Worldwide Image Geolocalization
+## 🗺️📍 Worldwide Map Image Geolocalization
 
 ![ALT TEXT](/figures/inference.png)
 
