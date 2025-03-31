@@ -1,14 +1,7 @@
 <div align="center">    
  
-# 🌎 GeoMapCLIP: Clip-Inspired Alignment between Locations and Images for Effective Worldwide Geo-localization
-
-[![Paper](http://img.shields.io/badge/paper-arxiv.2309.16020-B31B1B.svg)](https://arxiv.org/abs/2309.16020v2)
-[![Conference](https://img.shields.io/badge/NeurIPS-2023-blue)]()
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/geoclip-clip-inspired-alignment-between/photo-geolocation-estimation-on-im2gps3k)](https://paperswithcode.com/sota/photo-geolocation-estimation-on-im2gps3k?p=geoclip-clip-inspired-alignment-between)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/geoclip-clip-inspired-alignment-between/gps-embeddings-on-geo-tagged-nus-wide-gps)](https://paperswithcode.com/sota/gps-embeddings-on-geo-tagged-nus-wide-gps?p=geoclip-clip-inspired-alignment-between)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/geoclip-clip-inspired-alignment-between/photo-geolocation-estimation-on-gws15k)](https://paperswithcode.com/sota/photo-geolocation-estimation-on-gws15k?p=geoclip-clip-inspired-alignment-between)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/geoclip-clip-inspired-alignment-between/gps-embeddings-on-geo-tagged-nus-wide-gps-1)](https://paperswithcode.com/sota/gps-embeddings-on-geo-tagged-nus-wide-gps-1?p=geoclip-clip-inspired-alignment-between)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/geoclip-clip-inspired-alignment-between/photo-geolocation-estimation-on-yfcc26k)](https://paperswithcode.com/sota/photo-geolocation-estimation-on-yfcc26k?p=geoclip-clip-inspired-alignment-between)
+# 🌎 GeoMapCLIP: Worldwide Map Image Geo-localization
+GeoMapCLIP is fine-tuned GeoCLIP. 
 
 ![ALT TEXT](/figures/GeoMapCLIP.png)
 
@@ -16,14 +9,17 @@
 
 
 ## Description
-
-GeoMapCLIP addresses the challenges of worldwide image geo-localization by introducing a novel CLIP-inspired approach that aligns images with geographical locations, achieving state-of-the-art results on geo-localization and GPS to vector representation on benchmark datasets (Im2GPS3k, YFCC26k, GWS15k, and the Geo-Tagged NUS-Wide Dataset). Our location encoder models the Earth as a continuous function, learning semantically rich, CLIP-aligned features that are suitable for geo-localization. Additionally, our location encoder architecture generalizes, making it suitable for use as a pre-trained GPS encoder to aid geo-aware neural architectures.
+This project aims to develop a vision system capable of interpreting map images and extracting bounding box coordinates to describe map content.
+By fine-tuning models such as CLIP and applying image retrieval techniques, the system will learn to recognize legends, scales, symbols, and coordinate grids within geospatial maps, enabling automated extraction of structured spatial information.
+This advancement will significantly enhance the geospatial reasoning capabilities of large language models, supporting researchers in efficiently querying and leveraging legacy geospatial datasets.
+Initial development will focus on fine-tuning GeoCLIP (Contrastive Language-Image Pretraining) for map-specific tasks. The vision system will produce a list of coordinates corresponding to visual elements in map figures.
 
 ![ALT TEXT](/figures/method.png)
 
 ## Method
 
-Similarly to OpenAI's CLIP, GeoMapCLIP is trained contrastively by matching Image-GPS pairs. By using the MP-16 dataset, composed of 4.7M Images taken across the globe, GeoMapCLIP learns distinctive visual features associated with different locations on earth.
+Similarly to OpenAI's CLIP, GeoMapCLIP is trained contrastively by matching Image-GPS pairs. 
+GeoMapCLIP learns distinctive visual features associated with different locations on earth.
 
 _🚧 Repo Under Construction 🔨_
 
@@ -68,9 +64,6 @@ for i in range(5):
     print("")
 ```
 
-## 🌐 Worldwide GPS Embeddings
-
-In our paper, we show that once trained, our location encoder can assist other geo-aware neural architectures. Specifically, we explore our location encoder's ability to improve multi-class classification accuracy. We achieved state-of-the-art results on the Geo-Tagged NUS-Wide Dataset by concatenating GPS features from our pre-trained location encoder with an image's visual features. Additionally, we found that the GPS features learned by our location encoder, even without extra information, are effective for geo-aware image classification, achieving state-of-the-art performance in the GPS-only multi-class classification task on the same dataset.
 
 ![ALT TEXT](/figures/downstream-task.png)
 
