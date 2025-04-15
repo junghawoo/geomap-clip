@@ -18,7 +18,7 @@ class GeoMapCLIP(nn.Module):
         self.location_encoder = LocationEncoder()
 
         # Changed gps_gallery to 400K tile coordinates 
-        self.gps_gallery = load_gps_data(os.path.join(file_dir, "gps_gallery", "coordinates_400K.csv"))
+        self.gps_gallery = load_gps_data(os.path.join(file_dir, "gps_gallery", "fibonacci_lattice_land.csv"))
         self._initialize_gps_queue(queue_size)
 
         if from_pretrained:

@@ -10,9 +10,13 @@ from torch.utils.data import Dataset
 
 def img_train_transform():
     train_transform_list = transforms.Compose([
-        transforms.RandomResizedCrop(224),
-        # Comment out if you want to see if no horizontal flop improves the accuracy
-        transforms.RandomHorizontalFlip(),
+        #transforms.RandomResizedCrop(224),
+        # RandomResizedCrop transform crops an image at a random location, and then resizes the crop to a given size.
+        # This is not what we want to apply to a map tile. Applying RandomResizedCrop() function distorts the center coordinate of a map tile.
+        # so we resize original 256x 256 tile to 224 x 224.
+        transforms.Resize(224),
+        # We assume that a map tile's longitude increase towards the right.
+        # transforms.RandomHorizontalFlip(),
         transforms.RandomApply([transforms.ColorJitter(brightness=0.4, contrast=0.4, saturation=0.4, hue=0.1)], p=0.8),
         transforms.RandomGrayscale(p=0.2),
         transforms.PILToTensor(),
